@@ -1,0 +1,1 @@
+Minecraft plugin, nothing interesting happens.
