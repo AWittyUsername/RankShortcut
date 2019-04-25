@@ -2,3 +2,40 @@ name: RankShortcut
 version: 1.0
 author: Your very own Jemo_Eder
 main: com.github.awittyusername.rankshortcut.Main
+commands:
+  rslist:
+    description: Lists all available ranks
+    usage: /rslist
+  rsreload:
+    description: Reload the RankShortcut config
+    usage: /rsreload
+  rscheck:
+    description: Shows the requirements for your next rank
+    usage: /rscheck
+  rsplaytime:
+    description: Shows how long you've played on the server
+    usage: /rsplaytime
+permissions:
+  rankshortcut.*:
+    description: Gives all rankshortcut permissions
+    children:
+      rankshortcut.check: true
+      rankshortcut.list: true
+      rankshortcut.playtime: true
+      rankshortcut.reload: true
+      rankshortcut.exempt: true
+  rankshortcut.exempt:
+    description: Makes you exempt from automatic rankups
+    default: false
+  rankshortcut.check:
+    description: allows you to see what your next rank is
+    default: true
+  rankshortcut.list:
+    description: allows you to view all ranks
+    default: false
+  rankshortcut.playtime:
+    description: allows you to see how long you've played
+    default: true
+  rankshortcut.reload:
+    description: reloads the config
+    default: false
