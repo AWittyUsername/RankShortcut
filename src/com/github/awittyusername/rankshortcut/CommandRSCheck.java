@@ -22,7 +22,7 @@ public class CommandRSCheck implements CommandExecutor {
                     commandSender.sendMessage(ChatColor.AQUA + "You have to play for another " + ChatColor.YELLOW + plugin.hourMinuteFormatter((next.getRankTime() - playtime) / 60) + ChatColor.AQUA +
                             " to reach it.");
                     if (plugin.getConfig().getBoolean("costEnabled")) {
-                        commandSender.sendMessage(ChatColor.AQUA + "you can also pay" + ChatColor.YELLOW + " $" + plugin.calculateEffectiveCost(next.getRankCost(), (float) playtime / next.getRankTime()) + ChatColor.AQUA + " to rank up now, use /rsbuy!");
+                        commandSender.sendMessage(ChatColor.AQUA + "you can also pay" + ChatColor.YELLOW + " $" + plugin.calculateEffectiveCost(next.getRankCost(), (float) playtime / next.getRankTime()) + ChatColor.AQUA + " to rank up now, use "+ChatColor.YELLOW +"/rsbuy"+ChatColor.AQUA+"!");
                     }
                 } else {
                     commandSender.sendMessage(ChatColor.AQUA + "You have already reached the highest rank, congratulations!");

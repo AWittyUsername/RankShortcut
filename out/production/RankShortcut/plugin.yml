@@ -42,3 +42,6 @@ permissions:
   rankshortcut.reload:
     description: reloads the config
     default: false
+  rankshortcut.buy:
+    description: lets you use the /rsbuy command
+    default: false

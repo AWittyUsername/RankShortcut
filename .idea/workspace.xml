@@ -7,19 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="799619b3-62d9-4255-9cd0-9758281cf7b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSBuy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RankShortcut_jar/RankShortcut.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/RankShortcut_jar/RankShortcut.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RankShortcut/com/github/awittyusername/rankshortcut/CommandRSCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RankShortcut/com/github/awittyusername/rankshortcut/CommandRSCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RankShortcut/com/github/awittyusername/rankshortcut/CommandRSPlaytime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RankShortcut/com/github/awittyusername/rankshortcut/CommandRSPlaytime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RankShortcut/com/github/awittyusername/rankshortcut/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RankShortcut/com/github/awittyusername/rankshortcut/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RankShortcut/com/github/awittyusername/rankshortcut/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RankShortcut/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RankShortcut/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RankShortcut/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RankShortcut/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSBuy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSBuy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSPlaytime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSPlaytime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="77" column="37" selection-start-line="77" selection-start-column="37" selection-end-line="77" selection-end-column="37" />
+            <state relative-caret-position="427">
+              <caret line="102" column="13" lean-forward="true" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onDisable#0;class#Main#0" />
@@ -69,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSBuy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
+            <state relative-caret-position="719">
+              <caret line="69" column="80" selection-start-line="69" selection-start-column="80" selection-end-line="69" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSCheck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="126" />
+            <state relative-caret-position="272">
+              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSPlaytime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="323">
               <caret line="19" column="91" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -120,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/plugin.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+            <state relative-caret-position="782">
+              <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -166,11 +155,11 @@
         <option value="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSList.java" />
         <option value="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSReload.java" />
         <option value="$PROJECT_DIR$/src/config.yml" />
-        <option value="$PROJECT_DIR$/src/plugin.yml" />
         <option value="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSPlaytime.java" />
-        <option value="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSCheck.java" />
-        <option value="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSBuy.java" />
         <option value="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/Main.java" />
+        <option value="$PROJECT_DIR$/src/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSBuy.java" />
+        <option value="$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSCheck.java" />
       </list>
     </option>
   </component>
@@ -397,30 +386,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="126" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSPlaytime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="91" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        <state relative-caret-position="782">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -431,10 +400,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSPlaytime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="91" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSBuy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
+        <state relative-caret-position="719">
+          <caret line="69" column="80" selection-start-line="69" selection-start-column="80" selection-end-line="69" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/CommandRSCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -443,8 +432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/awittyusername/rankshortcut/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="77" column="37" selection-start-line="77" selection-start-column="37" selection-end-line="77" selection-end-column="37" />
+        <state relative-caret-position="427">
+          <caret line="102" column="13" lean-forward="true" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onDisable#0;class#Main#0" />
