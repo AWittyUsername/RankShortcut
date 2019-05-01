@@ -15,6 +15,9 @@ commands:
   rsplaytime:
     description: Shows how long you've played on the server
     usage: /rsplaytime
+  rsbuy:
+    description: Lets you buy the next rank with money
+    usage: /rsbuy
 permissions:
   rankshortcut.*:
     description: Gives all rankshortcut permissions

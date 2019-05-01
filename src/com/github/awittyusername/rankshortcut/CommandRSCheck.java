@@ -15,15 +15,14 @@ public class CommandRSCheck implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if(commandSender instanceof Player) {
             if (commandSender.hasPermission("rankshortcut.check")) {
-                int playtime = ((Player) commandSender).getStatistic(Statistic.PLAY_ONE_MINUTE);
-                playtime /= 20;
+                int playtime = plugin.getEffectivePlayTime(((Player) commandSender).getUniqueId());
                 @Nullable Rank next = plugin.getNextRank(playtime);
                 if (next != null) {
                     commandSender.sendMessage(ChatColor.AQUA + "The next rank available for you is: " + ChatColor.YELLOW + next.getRankName() + ".");
                     commandSender.sendMessage(ChatColor.AQUA + "You have to play for another " + ChatColor.YELLOW + plugin.hourMinuteFormatter((next.getRankTime() - playtime) / 60) + ChatColor.AQUA +
                             " to reach it.");
                     if (plugin.getConfig().getBoolean("costEnabled")) {
-                        commandSender.sendMessage(ChatColor.AQUA + "you can also pay" + ChatColor.YELLOW + " $" + plugin.calculateEffectiveCost(next.getRankCost(), (float) playtime / next.getRankTime()) + ChatColor.AQUA + " to rank up now!");
+                        commandSender.sendMessage(ChatColor.AQUA + "you can also pay" + ChatColor.YELLOW + " $" + plugin.calculateEffectiveCost(next.getRankCost(), (float) playtime / next.getRankTime()) + ChatColor.AQUA + " to rank up now, use /rsbuy!");
                     }
                 } else {
                     commandSender.sendMessage(ChatColor.AQUA + "You have already reached the highest rank, congratulations!");

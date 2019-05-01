@@ -4,12 +4,14 @@ import me.lucko.luckperms.LuckPerms;
 import me.lucko.luckperms.api.LuckPermsApi;
 import me.lucko.luckperms.api.User;
 import me.lucko.luckperms.api.manager.UserManager;
+import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Statistic;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitScheduler;
@@ -17,10 +19,10 @@ import org.bukkit.scheduler.BukkitTask;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Set;
-import java.util.Timer;
+import java.util.*;
+
+import net.milkbowl.vault.economy.Economy;
+
 
 public class Main extends JavaPlugin {
     public static Main plugin;
@@ -28,8 +30,14 @@ public class Main extends JavaPlugin {
     LuckPermsApi lpApi;
     File playerDataFile = new File(getDataFolder(),"data.yml");
     FileConfiguration playerData = YamlConfiguration.loadConfiguration(playerDataFile);
+    Economy eco;
     @Override
     public void onEnable(){
+        if(!enableEconomy()){
+            Bukkit.getConsoleSender().sendMessage("RankShortcut was disabled because the Vault dependency is missing!");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
         plugin = this;
         lpApi = LuckPerms.getApi();
         getServer().getPluginManager().registerEvents(new ListenerClass(),this);
@@ -37,11 +45,7 @@ public class Main extends JavaPlugin {
         savePlayerDataFile(playerData,playerDataFile);
         populateRanks();
         BukkitScheduler scheduler = getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
-            @Override
-            public void run() {
-                pollEligibility();
-            }},0L,100L);
+        scheduler.scheduleSyncRepeatingTask(this, () -> pollEligibility(),0L,100L);
 
         registerCommands();
         Bukkit.getConsoleSender().sendMessage("***\nRankShortcut loaded succesfully!\n***");
@@ -50,12 +54,12 @@ public class Main extends JavaPlugin {
     public void onDisable(){
     }
 
-
     public void registerCommands(){
         this.getCommand("rslist").setExecutor(new CommandRSList());
         this.getCommand("rsreload").setExecutor(new CommandRSReload());
         this.getCommand("rscheck").setExecutor(new CommandRSCheck());
         this.getCommand("rsplaytime").setExecutor(new CommandRSPlaytime());
+        this.getCommand("rsbuy").setExecutor(new CommandRSBuy());
     }
     public void populateRanks(){
         FileConfiguration config = this.getConfig();
@@ -86,13 +90,14 @@ public class Main extends JavaPlugin {
     }
     public void pollEligibility(){
         for(Player player:Bukkit.getOnlinePlayers()){
+            Bukkit.getConsoleSender().sendMessage("Found player: "+ player.getName());
             if(player.hasPermission("rankshortcut.exempt")){
-                return;
+                continue;
             }
             String UUID = player.getUniqueId().toString();
             int currentRank = playerData.getInt(UUID+".rank");
-            if(currentRank < ranks.length) {
-                if ((player.getStatistic(Statistic.PLAY_ONE_MINUTE) / 20) > ranks[currentRank+1].getRankTime()){
+            if(currentRank < ranks.length-1) {
+                if ((getEffectivePlayTime(player.getUniqueId())> ranks[currentRank+1].getRankTime())){
                     rankup(player,currentRank);
                 }
             }
@@ -108,6 +113,7 @@ public class Main extends JavaPlugin {
     }
     public void registerNewPlayer(String UUID){
         playerData.set(UUID+".rank",0);
+        playerData.set(UUID+".bonusplaytime",0);
         savePlayerDataFile(playerData,playerDataFile);
     }
     public void rankup(Player player,int currentRank){
@@ -117,5 +123,24 @@ public class Main extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage(player.getDisplayName());
         Bukkit.getConsoleSender().sendMessage("lp user "+player.getDisplayName()+ " group set "+ ranks[currentRank+1].getRankName());
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(),"lp user "+player.getName()+ " group set "+ ranks[currentRank+1].getRankName());
+    }
+    public boolean enableEconomy(){
+        if(Bukkit.getPluginManager().getPlugin("Vault")==null){
+            return false;
+        }
+        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+        if(rsp == null){
+            return false;
+        }
+        eco = rsp.getProvider();
+        return eco != null;
+    }
+    public boolean deductMoney(int amount, Player target){
+        EconomyResponse e = eco.withdrawPlayer(target,amount);
+        return e.transactionSuccess();
+    }
+    public int getEffectivePlayTime(UUID uuid){
+        int effectivePlayTime = (playerData.getInt(uuid.toString() + ".bonusplaytime") + ((Bukkit.getPlayer(uuid).getStatistic(Statistic.PLAY_ONE_MINUTE)/20)));
+        return effectivePlayTime;
     }
 }
